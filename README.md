@@ -1,1 +1,4 @@
-# presentation-JS-Objects-Prototypes-Factories
+# Presentation about:
+## JavaScript Objects
+## Prototypes
+## Creation Patterns

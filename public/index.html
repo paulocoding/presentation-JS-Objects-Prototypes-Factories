@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	
+	<title>JavaScript Objects</title>
+	
+	<meta name="A Presentations about JavaScript Objects" content="">
+	
+  <!-- Mobile-friendly viewport -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+   <!-- Style sheet link -->
+	<link href="assets/css/styles.css" rel="stylesheet" media="all">
+</head>
+<body>
+	<main role="main">
+    <!--slide 1-->
+    <div class="slide">
+      <h1 class="slide-title">JS Objects</h1>
+      <div class="slide-content">
+        <h2 class="green">I'm going to talk about</h2>
+        <ul>
+          <li>JavaScript Objects</li>
+          <li>Prototypes</li>
+          <li>Object Creation Patterns</li>
+        </ul>
+      </div>
+    </div>
+    <!--slide 2-->
+    <div class="slide">
+      <h1 class="slide-title">JS Objects</h1>
+      <div class="slide-content">
+        <h2 class="green">Creating Objects in Javascript:</h2>
+        <ul>
+          <li>var obj1 = new Object();</li>
+          <li>var obj2 = {};</li>
+          <li>var obj3 = Object.Create(obj2);</li>
+        </ul>
+      </div>
+    </div>
+    <!--slide 3-->
+    <div class="slide">
+      <h1 class="slide-title">JS Objects</h1>
+      <div class="slide-content">
+        <h2 class="green">Creating Objects in Javascript:</h2>
+        <br>
+        <code>
+          var person1 = { name:"John" , age:34};
+        </code>
+      </div>
+    </div>
+    <!--slide 4-->
+    <div class="slide">
+      <h1 class="slide-title">JS Objects</h1>
+      <div class="slide-content">
+        <h2 class="green">Creating Objects in Javascript:</h2>
+        <br>
+        <code>
+          <p>var person2 = new Object();</p>
+          <p>person2.name = "John";</p>
+          <p>person2.age = 34;</p>
+        </code>
+      </div>
+    </div>
+    <!--slide 5-->
+    <div class="slide">
+      <h1 class="slide-title">JS Objects</h1>
+      <div class="slide-content">
+        <h2 class="green">Creating Objects in Javascript:</h2>
+        <br>
+        <code>
+          <p>var person3 = {};</p>
+          <p>person3["name"] = "John";</p>
+          <p>person3["age"] = 34;</p>
+        </code>
+      </div>
+    </div>
+    <!--slide 6-->
+    <div class="slide">
+      <h1 class="slide-title">JS Objects</h1>
+      <div class="slide-content">
+        <h2>Javascrips Objects are peculiar.</h2>
+        <h3 class="green">They are basically Hash Tables</h3>
+        <ul>
+          <li>jsObj.name == jsObj["name"]</li>
+          <li>Methods and Properties are created in the same way</li>
+          <li>you can add properties / methods at any time</li>
+          <li>they don't have classes (yet)</li>
+          <ul><li>but they have prototypes</li></ul>
+        </ul>
+      </div>
+    </div>
+    
+    <!--slide 7-->
+    <div class="slide">
+      <h1 class="slide-title">Slide title 2</h1>
+      <div class="slide-content">
+        <div class="half-slide-v">
+          <h2 class="blue">Section 1</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil voluptas quis unde. Libero architecto ratione inventore ipsum odit dicta, totam repellat, eaque distinctio quasi odio corporis deleniti possimus cupiditate vero.</p>
+        </div>
+        <div class="half-slide-v">
+          <h2 class="green">Section 2</h2>
+          <p>Totam repellat, eaque distinctio quasi odio corporis deleniti possimus cupiditate vero.</p>
+          <h3 class="green">Sub Title</h3>
+          <ul>
+            <li>one</li>
+            <li>two
+                <ul>
+                  <li>two and a half</li>
+                </ul>
+            </li>
+            <li>three</li>
+            <li>four</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    
+    <!--slide 8-->
+    <div class="slide">
+      <h1 class="slide-title">Slide title 3</h1>
+      <div class="slide-content">
+        <div class="half-slide-v">
+          <h2 class="blue">Section 1</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil voluptas quis unde. Libero architecto ratione inventore ipsum odit dicta, totam repellat, eaque distinctio quasi odio corporis deleniti possimus cupiditate vero.</p>
+        </div>
+        <div class="half-slide-v">
+          <h2 class="green">Section 2</h2>
+          <img src="assets/img/test-320x240.png" alt="test">
+          <p>Totam repellat, eaque distinc</p>
+        </div>
+      </div>
+    </div>
+    
+
+	</main>
+  <!-- End primary page content -->
+  
+	<!-- importing javascript -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+	<script type='text/javascript' src='assets/js/bundle.js'></script>
+</body>
+</html>
