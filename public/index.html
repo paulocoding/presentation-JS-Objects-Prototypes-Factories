@@ -36,7 +36,7 @@
         <ul>
           <li>var obj1 = new Object();</li>
           <li>var obj2 = {};</li>
-          <li>var obj3 = Object.Create(obj2);</li>
+          <li>var obj3 = Object.Create(Object);</li>
         </ul>
       </div>
     </div>
@@ -82,12 +82,12 @@
       <h1 class="slide-title">JS Objects</h1>
       <div class="slide-content">
         <h2>Javascrips Objects are peculiar.</h2>
-        <h3 class="green">They are basically Hash Tables</h3>
+        <h3 class="green">They behave as Hash Tables</h3>
         <ul>
           <li>jsObj.name == jsObj["name"]</li>
           <li>Methods and Properties are created in the same way</li>
           <li>you can add properties / methods at any time</li>
-          <li>they don't have classes (yet)</li>
+          <li>they don't have classes (yet - coming in ES6)</li>
           <ul><li>but they have prototypes</li></ul>
         </ul>
       </div>
