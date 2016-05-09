@@ -44,23 +44,52 @@
     <div class="slide">
       <h1 class="slide-title">JS Objects</h1>
       <div class="slide-content">
-        <h2 class="green">Creating Objects in Javascript:</h2>
+        <h2 class="green">Acessing Object properties:</h2>
         <br>
         <code>
-          var person1 = { name:"John" , age:34};
+        <pre>
+        <span class="comment">// dot notation</span>
+        obj.name = 'MyObject';        
+        obj.name; <span class="comment">//'MyObject'</span>
+
+        <span class="comment">// bracket notation</span>
+        obj['name'] = 'MyObject';
+        obj['name']; <span class="comment">//'MyObject'</span>
+        </pre>
         </code>
       </div>
     </div>
+    <!--slide 3-->
+    <div class="slide">
+      <h1 class="slide-title">JS Objects</h1>
+      <div class="slide-content">
+        <h2 class="green">Methods:</h2>
+        <br>
+        <code>
+        <pre>
+        obj.print = function () {
+          console.log(this.name);
+        };
+        obj.print(); <span class="comment">//'MyObject'</span>
+        </pre>
+          </code>
+        </div>
+        </div>
     <!--slide 4-->
     <div class="slide">
       <h1 class="slide-title">JS Objects</h1>
       <div class="slide-content">
-        <h2 class="green">Creating Objects in Javascript:</h2>
+        <h2 class="green">Object literal:</h2>
         <br>
         <code>
-          <p>var person2 = new Object();</p>
-          <p>person2.name = "John";</p>
-          <p>person2.age = 34;</p>
+        <pre>
+        var person1 = { 
+          name:"John" ,
+          greet: function() { 
+            console.log("Hi I'm" + name);
+          }
+        };
+        </pre>
         </code>
       </div>
     </div>
@@ -68,12 +97,33 @@
     <div class="slide">
       <h1 class="slide-title">JS Objects</h1>
       <div class="slide-content">
-        <h2 class="green">Creating Objects in Javascript:</h2>
+        <h2 class="green">Constructor:</h2>
         <br>
         <code>
-          <p>var person3 = {};</p>
-          <p>person3["name"] = "John";</p>
-          <p>person3["age"] = 34;</p>
+        <pre>
+        var person2 = new Object();
+        person2.name = "John";
+        person2.greet = function() { 
+            console.log("Hi I'm" + name);
+          };
+        </pre>
+        </code>
+      </div>
+    </div>
+    <!--slide 5-->
+    <div class="slide">
+      <h1 class="slide-title">JS Objects</h1>
+      <div class="slide-content">
+        <h2 class="green">Object.Create()</h2>
+        <br>
+        <code>
+        <pre>
+        var person3 = Object.Create(Object);
+        person3["name"] = "John";
+        person3["greet"] = function() { 
+            console.log("Hi I'm" + name);
+          };
+        </pre>
         </code>
       </div>
     </div>
@@ -82,13 +132,13 @@
       <h1 class="slide-title">JS Objects</h1>
       <div class="slide-content">
         <h2>Javascrips Objects are peculiar.</h2>
-        <h3 class="green">They behave as Hash Tables</h3>
+        <h3 class="green">But very flexible!</h3>
         <ul>
-          <li>jsObj.name == jsObj["name"]</li>
+          <li>They are similar to Hash Maps</li>
           <li>Methods and Properties are created in the same way</li>
           <li>you can add properties / methods at any time</li>
           <li>they don't have classes (yet - coming in ES6)</li>
-          <ul><li>but they have prototypes</li></ul>
+          <ul><li>but they have prototypes!</li></ul>
         </ul>
       </div>
     </div>
