@@ -35,6 +35,9 @@ a, a:visited {
 a:hover {
   color: #ee9933; }
 
+p {
+  margin-bottom: 8px; }
+
 .clear:before,
 .clear:after {
   content: " ";

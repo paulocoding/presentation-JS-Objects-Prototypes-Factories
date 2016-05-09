@@ -16,7 +16,7 @@
 </head>
 <body>
 	<main role="main">
-    <!--slide 1-->
+    <!--slide-->
     <div class="slide">
       <h1 class="slide-title">JS Objects</h1>
       <div class="slide-content">
@@ -28,7 +28,7 @@
         </ul>
       </div>
     </div>
-    <!--slide 2-->
+    <!--slide-->
     <div class="slide">
       <h1 class="slide-title">JS Objects</h1>
       <div class="slide-content">
@@ -36,11 +36,11 @@
         <ul>
           <li>var obj1 = new Object();</li>
           <li>var obj2 = {};</li>
-          <li>var obj3 = Object.Create(Object);</li>
+          <li>var obj3 = Object.create(Object);</li>
         </ul>
       </div>
     </div>
-    <!--slide 3-->
+    <!--slide-->
     <div class="slide">
       <h1 class="slide-title">JS Objects</h1>
       <div class="slide-content">
@@ -59,7 +59,7 @@
         </code>
       </div>
     </div>
-    <!--slide 3-->
+    <!--slide-->
     <div class="slide">
       <h1 class="slide-title">JS Objects</h1>
       <div class="slide-content">
@@ -75,7 +75,7 @@
           </code>
         </div>
         </div>
-    <!--slide 4-->
+    <!--slide-->
     <div class="slide">
       <h1 class="slide-title">JS Objects</h1>
       <div class="slide-content">
@@ -86,48 +86,48 @@
         var person1 = { 
           name:"John" ,
           greet: function() { 
-            console.log("Hi I'm" + name);
+            console.log("Hi I'm" + this.name);
           }
         };
         </pre>
         </code>
       </div>
     </div>
-    <!--slide 5-->
+    <!--slide-->
     <div class="slide">
       <h1 class="slide-title">JS Objects</h1>
       <div class="slide-content">
-        <h2 class="green">Constructor:</h2>
+        <h2 class="green">Constructor function:</h2>
         <br>
         <code>
         <pre>
         var person2 = new Object();
         person2.name = "John";
         person2.greet = function() { 
-            console.log("Hi I'm" + name);
+            console.log("Hi I'm" + this.name);
           };
         </pre>
         </code>
       </div>
     </div>
-    <!--slide 5-->
+    <!--slide-->
     <div class="slide">
       <h1 class="slide-title">JS Objects</h1>
       <div class="slide-content">
-        <h2 class="green">Object.Create()</h2>
+        <h2 class="green">Object.create()</h2>
         <br>
         <code>
         <pre>
-        var person3 = Object.Create(Object);
+        var person3 = Object.create(Object);
         person3["name"] = "John";
         person3["greet"] = function() { 
-            console.log("Hi I'm" + name);
+            console.log("Hi I'm" + this.name);
           };
         </pre>
         </code>
       </div>
     </div>
-    <!--slide 6-->
+    <!--slide-->
     <div class="slide">
       <h1 class="slide-title">JS Objects</h1>
       <div class="slide-content">
@@ -136,55 +136,135 @@
         <ul>
           <li>They are similar to Hash Maps</li>
           <li>Methods and Properties are created in the same way</li>
-          <li>you can add properties / methods at any time</li>
-          <li>they don't have classes (yet - coming in ES6)</li>
-          <ul><li>but they have prototypes!</li></ul>
+          <li>You can add properties / methods at any time</li>
+          <li>They don't have classes (yet - coming in ES6)</li>
+          <ul><li>But they have prototypes!</li></ul>
+        </ul>
+      </div>
+    </div>
+    <!--slide-->
+    <div class="slide">
+      <h1 class="slide-title">JS Objects</h1>
+      <div class="slide-content">
+        <h2>How to scale</h2>
+        <h3 class="green">What about when you want a lot of objects?</h3>
+      </div>
+    </div>
+    <!--slide-->
+    <div class="slide">
+      <h1 class="slide-title">JS Objects</h1>
+      <div class="slide-content">
+        <h2>How to scale</h2>
+        <h3 class="green">What about when you want a lot of objects?</h3>
+        <h4>We can use:</h4>
+        <ul>
+          <li>Object.create( ) Pattern</li>
+          <li>Constructor Pattern</li>
+          <li>Factory Pattern</li>
         </ul>
       </div>
     </div>
     
-    <!--slide 7-->
+    <!--slide-->
     <div class="slide">
-      <h1 class="slide-title">Slide title 2</h1>
+      <h1 class="slide-title">JS Objects</h1>
       <div class="slide-content">
-        <div class="half-slide-v">
-          <h2 class="blue">Section 1</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil voluptas quis unde. Libero architecto ratione inventore ipsum odit dicta, totam repellat, eaque distinctio quasi odio corporis deleniti possimus cupiditate vero.</p>
-        </div>
-        <div class="half-slide-v">
-          <h2 class="green">Section 2</h2>
-          <p>Totam repellat, eaque distinctio quasi odio corporis deleniti possimus cupiditate vero.</p>
-          <h3 class="green">Sub Title</h3>
-          <ul>
-            <li>one</li>
-            <li>two
-                <ul>
-                  <li>two and a half</li>
-                </ul>
-            </li>
-            <li>three</li>
-            <li>four</li>
-          </ul>
-        </div>
+       <h2 class="green">Object.create( )</h2>
+       <p>With <span class="blue">Object.create( )</span> we use an object as the prototype for other objects.</p>
+       <p>This new object will inherit its properties from the prototype object.</p>
+       <p>New properties/methods added to the prototype object and they will be available in all created objects.</p>
       </div>
     </div>
     
-    <!--slide 8-->
+    <!--slide-->
     <div class="slide">
-      <h1 class="slide-title">Slide title 3</h1>
+      <h1 class="slide-title">JS Objects</h1>
       <div class="slide-content">
-        <div class="half-slide-v">
-          <h2 class="blue">Section 1</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil voluptas quis unde. Libero architecto ratione inventore ipsum odit dicta, totam repellat, eaque distinctio quasi odio corporis deleniti possimus cupiditate vero.</p>
-        </div>
-        <div class="half-slide-v">
-          <h2 class="green">Section 2</h2>
-          <img src="assets/img/test-320x240.png" alt="test">
-          <p>Totam repellat, eaque distinc</p>
-        </div>
+       <h2 class="green">Object.create( )</h2>       
+        <code>
+        <pre>
+        ##Object.create( ) Method code example##
+        </pre>
+        </code>
       </div>
     </div>
     
+    <!--slide-->
+    <div class="slide">
+      <h1 class="slide-title">JS Objects</h1>
+      <div class="slide-content">
+       <h2 class="green">Object.create( )</h2>       
+        <code>
+        <pre>
+        ##Object.create( ) typechecking##
+        </pre>
+        </code>
+      </div>
+    </div>
+    <!--slide-->
+    <div class="slide">
+      <h1 class="slide-title">JS Objects</h1>
+      <div class="slide-content">
+       <h2 class="green">Constructor</h2>
+       <p>##description.##</p>
+      </div>
+    </div>    
+    <!--slide-->
+    <div class="slide">
+      <h1 class="slide-title">JS Objects</h1>
+      <div class="slide-content">
+       <h2 class="green">Constructor</h2>       
+        <code>
+        <pre>
+        ##Constructor code example##
+        </pre>
+        </code>
+      </div>
+    </div>
+    <!--slide-->
+    <div class="slide">
+      <h1 class="slide-title">JS Objects</h1>
+      <div class="slide-content">
+       <h2 class="green">Factory</h2>
+       <p>##description.##</p>
+      </div>
+    </div>
+    <!--slide-->
+    <div class="slide">
+      <h1 class="slide-title">JS Objects</h1>
+      <div class="slide-content">
+       <h2 class="green">Factory</h2>       
+        <code>
+        <pre>
+        ##Factory code example##
+        </pre>
+        </code>
+      </div>
+    </div>
+    <!--slide-->
+    <div class="slide">
+      <h1 class="slide-title">JS Objects</h1>
+      <div class="slide-content">
+       <h2 class="green">Factory multiple inheritance?</h2>       
+        <code>
+        <pre>
+        ##maybe##
+        </pre>
+        </code>
+      </div>
+    </div>
+    <!--slide-->
+    <div class="slide">
+      <h1 class="slide-title">JS Objects</h1>
+      <div class="slide-content">
+       <h2 class="green">Factory composition?</h2>       
+        <code>
+        <pre>
+        ##maybe##
+        </pre>
+        </code>
+      </div>
+    </div>
 
 	</main>
   <!-- End primary page content -->
