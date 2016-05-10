@@ -240,9 +240,13 @@
       <h1 class="slide-title">JS Objects</h1>
       <div class="slide-content">
        <h2 class="green">Object.create( )</h2>       
+       <h3>Creating an instance:</h3>    
         <code>
         <pre>
-        ##Object.create( ) typechecking##
+        var person1 = Object.create(person);
+        person1.name = "Paulo";
+        person1.gender = "m";
+        person1.greet(); <span class="comment">//"Hello my name is Paulo"</span>
         </pre>
         </code>
       </div>
@@ -252,7 +256,8 @@
       <h1 class="slide-title">JS Objects</h1>
       <div class="slide-content">
        <h2 class="green">Constructor</h2>
-       <p>##description.##</p>
+       <p>A constructor function is used to create new objects.</p>
+       <p>It has an associated prototype object that can be accessed: <span class="green">funcName.prototype</span></p>
       </div>
     </div>    
     <!--slide-->
@@ -262,7 +267,27 @@
        <h2 class="green">Constructor</h2>       
         <code>
         <pre>
-        ##Constructor code example##
+        var Person = function(name, gender){
+          this.name = name;
+          this.gender = gender;
+          this.greet = function(){
+            console.log("Hello my name is " + this.name);
+          };
+        };
+        </pre>
+        </code>
+      </div>
+    </div>
+    <!--slide-->
+    <div class="slide">
+      <h1 class="slide-title">JS Objects</h1>
+      <div class="slide-content">
+       <h2 class="green">Constructor</h2>       
+        <code>
+        <pre>
+        var person1 = new Person("Paulo", "m");
+        person1.greet(); <span class="comment">//"Hello my name is Paulo"</span>
+        Person.prototype; <span class="comment">// *prototype* </span>
         </pre>
         </code>
       </div>
@@ -272,7 +297,9 @@
       <h1 class="slide-title">JS Objects</h1>
       <div class="slide-content">
        <h2 class="green">Factory</h2>
-       <p>##description.##</p>
+       <p>Easy to understand.</p>
+       <p>Avoids "this" problems.</p>
+       <p>Flexible.</p>
       </div>
     </div>
     <!--slide-->
@@ -282,7 +309,27 @@
        <h2 class="green">Factory</h2>       
         <code>
         <pre>
-        ##Factory code example##
+        var PersonFactory = function(name, gender){
+          var tmp = {};
+          tmp.name = name;
+          tmp.gender = gender;
+          tmp.greet = function(){
+            console.log("Hello my name is " + tmp.name);
+          };
+        };
+        </pre>
+        </code>
+      </div>
+    </div>
+    <!--slide-->
+    <div class="slide">
+      <h1 class="slide-title">JS Objects</h1>
+      <div class="slide-content">
+       <h2 class="green">Factory</h2>       
+        <code>
+        <pre>
+        var person1 = PersonFactory("Paulo","m");
+        person1.greet(); <span class="comment">//"Hello my name is Paulo"</span>
         </pre>
         </code>
       </div>
