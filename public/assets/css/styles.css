@@ -86,6 +86,9 @@ p {
 #mv-right:hover, #mv-left:hover {
   opacity: .9; }
 
+.text-center {
+  text-align: center; }
+
 .slide {
   display: block;
   width: 100%;

@@ -16,11 +16,12 @@
 </head>
 <body>
 	<main role="main">
+    
     <!--slide-->
     <div class="slide">
       <h1 class="slide-title">JS Objects</h1>
       <div class="slide-content">
-        <h2 class="green">I'm going to talk about</h2>
+        <h2 class="green">I'm going to talk about:</h2>
         <ul>
           <li>JavaScript Objects</li>
           <li>Prototypes</li>
@@ -86,7 +87,7 @@
         var person1 = { 
           name:"John" ,
           greet: function() { 
-            console.log("Hi I'm" + this.name);
+            console.log("Hi I'm " + this.name);
           }
         };
         </pre>
@@ -104,7 +105,7 @@
         var person2 = new Object();
         person2.name = "John";
         person2.greet = function() { 
-            console.log("Hi I'm" + this.name);
+            console.log("Hi I'm " + this.name);
           };
         </pre>
         </code>
@@ -121,7 +122,7 @@
         var person3 = Object.create(Object);
         person3["name"] = "John";
         person3["greet"] = function() { 
-            console.log("Hi I'm" + this.name);
+            console.log("Hi I'm " + this.name);
           };
         </pre>
         </code>
@@ -140,6 +141,44 @@
           <li>They don't have classes (yet - coming in ES6)</li>
           <ul><li>But they have prototypes!</li></ul>
         </ul>
+      </div>
+    </div>
+    <!--slide-->
+    <div class="slide">
+      <h1 class="slide-title">JS Objects</h1>
+      <div class="slide-content">
+        <h2 class="green">Prototypes</h2>
+        <ul>
+          <li>Prototypes allow us to implement inheritance in JS</li>
+          <li>They are not Classes!</li>
+          <li>A prototype is an object from which other objects inherit properties</li>
+        </ul>
+      </div>
+    </div>
+    <!--slide-->
+    <div class="slide">
+      <h1 class="slide-title">JS Objects</h1>
+      <div class="slide-content">
+        <h2 class="green">Prototypes</h2>
+        <ul>
+          <li>A property/method added to a prototype will be available to all it's instances</li>
+          <li>A property/method added to one of it's instances will not be available the prototype object or the other instances</li>
+          <li>You can overwrite a property/method in an instance</li>
+        </ul>
+      </div>
+    </div>
+    <!--slide-->
+    <div class="slide">
+      <h1 class="slide-title">JS Objects</h1>
+      <div class="slide-content">
+        <div class="half-slide-v">
+          <h2 class="green">The prototype chain</h2>
+          <p>Prototype inheritance works by going up the prototype chain if the called method/property is not found in the current object.</p>
+          <p>When the method is found, it won't look further.</p>
+        </div>
+        <div class="half-slide-v">
+          <img src="assets/img/PrototypeChain.jpg" alt="">
+        </div>
       </div>
     </div>
     <!--slide-->
@@ -172,7 +211,7 @@
        <h2 class="green">Object.create( )</h2>
        <p>With <span class="blue">Object.create( )</span> we use an object as the prototype for other objects.</p>
        <p>This new object will inherit its properties from the prototype object.</p>
-       <p>New properties/methods added to the prototype object and they will be available in all created objects.</p>
+       <p>New properties/methods added to the prototype object will be available in all created objects. (from that prototype)</p>
       </div>
     </div>
     
@@ -181,9 +220,16 @@
       <h1 class="slide-title">JS Objects</h1>
       <div class="slide-content">
        <h2 class="green">Object.create( )</h2>       
+       <h3>Creating the prototype Object:</h3>
         <code>
         <pre>
-        ##Object.create( ) Method code example##
+        var person = {
+          name: "no name",
+          gender: "no gender",
+          greet: function(){
+            console.log("Hello my name is " + this.name);
+          }
+        };
         </pre>
         </code>
       </div>
