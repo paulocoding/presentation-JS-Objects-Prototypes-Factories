@@ -37,7 +37,7 @@
         <ul>
           <li>var obj1 = new Object();</li>
           <li>var obj2 = {};</li>
-          <li>var obj3 = Object.create(Object);</li>
+          <li>var obj3 = Object.create({});</li>
         </ul>
       </div>
     </div>
@@ -119,7 +119,7 @@
         <br>
         <code>
         <pre>
-        var person3 = Object.create(Object);
+        var person3 = Object.create({});
         person3["name"] = "John";
         person3["greet"] = function() { 
             console.log("Hi I'm " + this.name);
@@ -226,6 +226,10 @@
         var person = {
           name: "no name",
           gender: "no gender",
+          init: function(name, gender){
+            this.name = name;
+            this.gender = gender;
+          },
           greet: function(){
             console.log("Hello my name is " + this.name);
           }
@@ -244,8 +248,7 @@
         <code>
         <pre>
         var person1 = Object.create(person);
-        person1.name = "Paulo";
-        person1.gender = "m";
+        person1.init("Paulo", "m");
         person1.greet(); <span class="comment">//"Hello my name is Paulo"</span>
         </pre>
         </code>
@@ -256,7 +259,8 @@
       <h1 class="slide-title">JS Objects</h1>
       <div class="slide-content">
        <h2 class="green">Constructor</h2>
-       <p>A constructor function is used to create new objects.</p>
+       <p>A constructor is a function used for initializing new objects.</p>
+       <p>You use the new keyword to call the constructor.</p>
        <p>It has an associated prototype object that can be accessed: <span class="green">funcName.prototype</span></p>
       </div>
     </div>    
@@ -296,6 +300,22 @@
     <div class="slide">
       <h1 class="slide-title">JS Objects</h1>
       <div class="slide-content">
+       <h2 class="green">Inheritance with Constructor:</h2>       
+        <code>
+        <pre>
+        var Employee = function(name, gender, jobTitle){
+         Person.call(this, name, gender);
+         this.jobTitle = jobTitle;
+        };
+        Employee.prototype = new Person();
+        </pre>
+        </code>
+      </div>
+    </div>
+    <!--slide-->
+    <div class="slide">
+      <h1 class="slide-title">JS Objects</h1>
+      <div class="slide-content">
        <h2 class="green">Factory</h2>
        <p>Easy to understand.</p>
        <p>Avoids "this" problems.</p>
@@ -316,6 +336,7 @@
           tmp.greet = function(){
             console.log("Hello my name is " + tmp.name);
           };
+          return tmp;
         };
         </pre>
         </code>
@@ -338,22 +359,22 @@
     <div class="slide">
       <h1 class="slide-title">JS Objects</h1>
       <div class="slide-content">
-       <h2 class="green">Factory multiple inheritance?</h2>       
+       <h2 class="green">Factory Composition</h2>       
         <code>
         <pre>
-        ##maybe##
-        </pre>
-        </code>
-      </div>
-    </div>
-    <!--slide-->
-    <div class="slide">
-      <h1 class="slide-title">JS Objects</h1>
-      <div class="slide-content">
-       <h2 class="green">Factory composition?</h2>       
-        <code>
-        <pre>
-        ##maybe##
+        var PersonFactory = function(state, name, gender){
+          state.name = name;
+          state.gender = gender;
+          state.greet = function(){
+            console.log("Hello my name is " + state.name);
+          };
+          return state;
+        };
+        var RobotFactory = function(state, model, battery){
+          state.model = model;
+          state.battery = battery;
+          return state;
+        };
         </pre>
         </code>
       </div>
