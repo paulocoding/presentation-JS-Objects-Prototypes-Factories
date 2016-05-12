@@ -49,13 +49,13 @@
         <br>
         <code>
         <pre>
-        <span class="comment">// dot notation</span>
-        obj.name = 'MyObject';        
-        obj.name; <span class="comment">//'MyObject'</span>
+  <span class="comment">// dot notation</span>
+  obj.name = 'MyObject';        
+  obj.name; <span class="comment">//'MyObject'</span>
 
-        <span class="comment">// bracket notation</span>
-        obj['name'] = 'MyObject';
-        obj['name']; <span class="comment">//'MyObject'</span>
+  <span class="comment">// bracket notation</span>
+  obj['name'] = 'MyObject';
+  obj['name']; <span class="comment">//'MyObject'</span>
         </pre>
         </code>
       </div>
@@ -68,10 +68,10 @@
         <br>
         <code>
         <pre>
-        obj.print = function () {
-          console.log(this.name);
-        };
-        obj.print(); <span class="comment">//'MyObject'</span>
+  obj.print = function () {
+    console.log(this.name);
+  };
+  obj.print(); <span class="comment">//'MyObject'</span>
         </pre>
           </code>
         </div>
@@ -84,12 +84,12 @@
         <br>
         <code>
         <pre>
-        var person1 = { 
-          name:"John" ,
-          greet: function() { 
-            console.log("Hi I'm " + this.name);
-          }
-        };
+  var person1 = { 
+    name:"John" ,
+    greet: function() { 
+      console.log("Hi I'm " + this.name);
+    }
+  };
         </pre>
         </code>
       </div>
@@ -102,11 +102,11 @@
         <br>
         <code>
         <pre>
-        var person2 = new Object();
-        person2.name = "John";
-        person2.greet = function() { 
-            console.log("Hi I'm " + this.name);
-          };
+  var person2 = new Object();
+  person2.name = "John";
+  person2.greet = function() { 
+      console.log("Hi I'm " + this.name);
+    };
         </pre>
         </code>
       </div>
@@ -119,11 +119,11 @@
         <br>
         <code>
         <pre>
-        var person3 = Object.create({});
-        person3["name"] = "John";
-        person3["greet"] = function() { 
-            console.log("Hi I'm " + this.name);
-          };
+  var person3 = Object.create({});
+  person3["name"] = "John";
+  person3["greet"] = function() { 
+      console.log("Hi I'm " + this.name);
+    };
         </pre>
         </code>
       </div>
@@ -223,17 +223,17 @@
        <h3>Creating the prototype Object:</h3>
         <code>
         <pre>
-        var person = {
-          name: "no name",
-          gender: "no gender",
-          init: function(name, gender){
-            this.name = name;
-            this.gender = gender;
-          },
-          greet: function(){
-            console.log("Hello my name is " + this.name);
-          }
-        };
+  var person = {
+    name: "no name",
+    gender: "no gender",
+    init: function(name, gender){
+      this.name = name;
+      this.gender = gender;
+    },
+    greet: function(){
+      console.log("Hello my name is " + this.name);
+    }
+  };
         </pre>
         </code>
       </div>
@@ -247,9 +247,9 @@
        <h3>Creating an instance:</h3>    
         <code>
         <pre>
-        var person1 = Object.create(person);
-        person1.init("Paulo", "m");
-        person1.greet(); <span class="comment">//"Hello my name is Paulo"</span>
+  var person1 = Object.create(person);
+  person1.init("Paulo", "m");
+  person1.greet(); <span class="comment">//"Hello my name is Paulo"</span>
         </pre>
         </code>
       </div>
@@ -271,13 +271,13 @@
        <h2 class="green">Constructor</h2>       
         <code>
         <pre>
-        var Person = function(name, gender){
-          this.name = name;
-          this.gender = gender;
-          this.greet = function(){
-            console.log("Hello my name is " + this.name);
-          };
-        };
+  var Person = function(name, gender){
+    this.name = name;
+    this.gender = gender;
+    this.greet = function(){
+      console.log("Hello my name is " + this.name);
+    };
+  };
         </pre>
         </code>
       </div>
@@ -289,9 +289,9 @@
        <h2 class="green">Constructor</h2>       
         <code>
         <pre>
-        var person1 = new Person("Paulo", "m");
-        person1.greet(); <span class="comment">//"Hello my name is Paulo"</span>
-        Person.prototype; <span class="comment">// *prototype* </span>
+  var person1 = new Person("Paulo", "m");
+  person1.greet(); <span class="comment">//"Hello my name is Paulo"</span>
+  Person.prototype; <span class="comment">// *prototype* </span>
         </pre>
         </code>
       </div>
@@ -303,11 +303,11 @@
        <h2 class="green">Inheritance with Constructor:</h2>       
         <code>
         <pre>
-        var Employee = function(name, gender, jobTitle){
-         Person.call(this, name, gender);
-         this.jobTitle = jobTitle;
-        };
-        Employee.prototype = new Person();
+  var Employee = function(name, gender, jobTitle){
+   Person.call(this, name, gender);
+   this.jobTitle = jobTitle;
+  };
+  Employee.prototype =  Object.create(Person.prototype);
         </pre>
         </code>
       </div>
@@ -329,15 +329,15 @@
        <h2 class="green">Factory</h2>       
         <code>
         <pre>
-        var PersonFactory = function(name, gender){
-          var tmp = {};
-          tmp.name = name;
-          tmp.gender = gender;
-          tmp.greet = function(){
-            console.log("Hello my name is " + tmp.name);
-          };
-          return tmp;
-        };
+  var PersonFactory = function(name, gender){
+    var tmp = {};
+    tmp.name = name;
+    tmp.gender = gender;
+    tmp.greet = function(){
+      console.log("Hello my name is " + tmp.name);
+    };
+    return tmp;
+  };
         </pre>
         </code>
       </div>
@@ -349,8 +349,38 @@
        <h2 class="green">Factory</h2>       
         <code>
         <pre>
-        var person1 = PersonFactory("Paulo","m");
-        person1.greet(); <span class="comment">//"Hello my name is Paulo"</span>
+  var person1 = PersonFactory("Paulo","m");
+  person1.greet(); <span class="comment">//"Hello my name is Paulo"</span>
+        </pre>
+        </code>
+      </div>
+    </div>
+    
+    <!--slide-->
+    <div class="slide">
+      <h1 class="slide-title">JS Objects</h1>
+      <div class="slide-content">
+       <h2 class="green">Composition</h2>
+       <p>With Inheritance you decide you types based on what they ARE.</p>
+       <p>With Composition you decide you types based on what they DO.</p>
+      </div>
+    </div>
+    
+    <!--slide-->
+    <div class="slide">
+      <h1 class="slide-title">JS Objects</h1>
+      <div class="slide-content">
+       <h2 class="green">Factory Composition</h2>       
+        <code>
+        <pre>
+  var PersonFactory = function(state, name, gender){
+    state.name = name;
+    state.gender = gender;
+    state.greet = function(){
+      console.log("Hello my name is " + state.name);
+    };
+    return state;
+  };
         </pre>
         </code>
       </div>
@@ -362,21 +392,44 @@
        <h2 class="green">Factory Composition</h2>       
         <code>
         <pre>
-        var PersonFactory = function(state, name, gender){
-          state.name = name;
-          state.gender = gender;
-          state.greet = function(){
-            console.log("Hello my name is " + state.name);
-          };
-          return state;
-        };
-        var RobotFactory = function(state, model, battery){
-          state.model = model;
-          state.battery = battery;
-          return state;
-        };
+  var RobotFactory = function(state, model, battery){
+    state.model = model;
+    state.battery = battery;
+    state.move = function(){ this.battery -= 20; };
+    state.isLowOnBattery = function(){ 
+      return this.battery <= 30;
+    };
+    return state;
+  };
         </pre>
         </code>
+      </div>
+    </div>
+    
+    <!--slide-->
+    <div class="slide">
+      <h1 class="slide-title">JS Objects</h1>
+      <div class="slide-content">
+       <h2 class="green">Factory Composition</h2>       
+        <code>
+        <pre>
+  var batman = PersonFactory( {}, "Bruce Wayne", "m");
+  
+  var spaceRobot = RobotFactory( {}, "r2d2", 60);
+
+  var robocop = PersonFactory( {}, "Alex J. Murphy", "m");
+  robocop = RobotFactory( robocop,
+    "OCP Crime Prevention Unit 001", 100);
+        </pre>
+        </code>
+      </div>
+    </div>
+    
+    <!--slide-->
+    <div class="slide">
+      <h1 class="slide-title">JS Objects</h1>
+      <div class="slide-content">
+       <h2 class="green">The End</h2>  
       </div>
     </div>
 
