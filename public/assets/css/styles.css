@@ -69,6 +69,13 @@ p {
 .clear:after {
   clear: both; }
 
+.progress-bar {
+  height: 2px; }
+  .progress-bar .progress {
+    height: 2px;
+    background-color: #2F839B;
+    width: 1%; }
+
 #mv-right, #mv-left {
   position: fixed;
   top: 10px;
@@ -86,8 +93,26 @@ p {
 #mv-right:hover, #mv-left:hover {
   opacity: .9; }
 
-.text-center {
+.center-h {
+  display: block;
+  margin: 0 auto; }
+
+.center-text {
   text-align: center; }
+
+.center-v {
+  display: block;
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+          transform: translateY(-50%); }
+
+.pad-left {
+  padding-left: 35%; }
+
+.pad-left-10 {
+  padding-left: 10%; }
 
 .slide {
   display: block;
@@ -102,7 +127,8 @@ p {
   .slide .slide-content {
     padding: 10px 15px;
     display: block;
-    max-width: 768px;
+    max-width: 800px;
+    height: 400px;
     margin: 0 auto; }
     .slide .slide-content ul {
       margin-left: 60px; }

@@ -1,13 +1,14 @@
-var main = function() {
+var main = function () {
   var currentSlide = 0;
   var slides = $('.slide');
+  updateProgressBar(slides, currentSlide);
   
-  slides.hide();  
+  slides.hide();
   $(slides[0]).fadeIn();
   
   // keyboard events handeling
-  $( 'html' ).keydown(function( event ) {
-    if ( event.which == 13 ) {
+  $('html').keydown(function(event) {
+    if (event.which === 13) {
     event.preventDefault();
     }
     if (event.which === 32 || event.which === 39 || event.which === 68)
@@ -20,7 +21,6 @@ var main = function() {
       // move one slide back
       currentSlide = moveSlide(slides, currentSlide, -1);
     }
-      
   });
   
   
@@ -30,6 +30,7 @@ var main = function() {
 //            currentSlide = moveSlide(slides, currentSlide, 1);
 //    }
 //  });
+  
 };
 // end of main function
 

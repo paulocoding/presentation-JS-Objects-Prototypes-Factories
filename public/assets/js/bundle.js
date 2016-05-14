@@ -6,20 +6,27 @@ var moveSlide = function(slides, current, n){
   } else if (current < 0){
     current = slides.length-1;
   }
-  $(slides[current]).fadeIn();
-    
+  $(slides[current]).fadeIn();  
+  updateProgressBar(slides, current);
   return current;
 };
-var main = function() {
+
+var updateProgressBar = function(slides, current){  
+  var totalSlides = slides.length;
+  var percent = (((current+1)/totalSlides)*100).toString() + "%";
+  $('.progress').css("width", percent);
+};
+var main = function () {
   var currentSlide = 0;
   var slides = $('.slide');
+  updateProgressBar(slides, currentSlide);
   
-  slides.hide();  
+  slides.hide();
   $(slides[0]).fadeIn();
   
   // keyboard events handeling
-  $( 'html' ).keydown(function( event ) {
-    if ( event.which == 13 ) {
+  $('html').keydown(function(event) {
+    if (event.which === 13) {
     event.preventDefault();
     }
     if (event.which === 32 || event.which === 39 || event.which === 68)
@@ -32,7 +39,6 @@ var main = function() {
       // move one slide back
       currentSlide = moveSlide(slides, currentSlide, -1);
     }
-      
   });
   
   
@@ -42,6 +48,7 @@ var main = function() {
 //            currentSlide = moveSlide(slides, currentSlide, 1);
 //    }
 //  });
+  
 };
 // end of main function
 
