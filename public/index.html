@@ -3,11 +3,11 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8">
-	
+
 	<title>JavaScript Objects</title>
-	
+
 	<meta name="A Presentations about JavaScript Objects" content="">
-	
+
   <!-- Mobile-friendly viewport -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -15,11 +15,11 @@
 	<link href="assets/css/styles.css" rel="stylesheet" media="all">
 </head>
 <body>
-    <div class="progress-bar">
-      <div class="progress"></div>
-    </div>
+  <div class="progress-bar">
+    <div class="progress"></div>
+  </div>
 	<main role="main">
-    
+
     <!--slide-->
     <div class="slide">
       <h1 class="slide-title">JS Objects</h1>
@@ -88,7 +88,7 @@
         <code>
         <pre>
   <span class="comment">// dot notation</span>
-  obj.name = 'MyObject';        
+  obj.name = 'MyObject';
   obj.name; <span class="comment">//'MyObject'</span>
 
   <span class="comment">// bracket notation</span>
@@ -122,9 +122,9 @@
         <br>
         <code>
         <pre>
-  var person1 = { 
+  var person1 = {
     name:"John" ,
-    greet: function() { 
+    greet: function() {
       console.log("Hi I'm " + this.name);
     }
   };
@@ -142,7 +142,7 @@
         <pre>
   var person2 = new Object();
   person2.name = "John";
-  person2.greet = function() { 
+  person2.greet = function() {
       console.log("Hi I'm " + this.name);
     };
         </pre>
@@ -159,7 +159,7 @@
         <pre>
   var person3 = Object.create({});
   person3["name"] = "John";
-  person3["greet"] = function() { 
+  person3["greet"] = function() {
       console.log("Hi I'm " + this.name);
     };
         </pre>
@@ -241,7 +241,7 @@
         </ul>
       </div>
     </div>
-    
+
     <!--slide-->
     <div class="slide">
       <h1 class="slide-title">JS Objects</h1>
@@ -252,12 +252,12 @@
        <p>New properties/methods added to the prototype object will be available in all created objects. (from that prototype)</p>
       </div>
     </div>
-    
+
     <!--slide-->
     <div class="slide">
       <h1 class="slide-title">JS Objects</h1>
       <div class="slide-content">
-       <h2 class="green">Object.create( )</h2>       
+       <h2 class="green">Object.create( )</h2>
        <h3>Creating the prototype Object:</h3>
         <code>
         <pre>
@@ -276,13 +276,13 @@
         </code>
       </div>
     </div>
-    
+
     <!--slide-->
     <div class="slide">
       <h1 class="slide-title">JS Objects</h1>
       <div class="slide-content">
-       <h2 class="green">Object.create( )</h2>       
-       <h3>Creating an instance:</h3>    
+       <h2 class="green">Object.create( )</h2>
+       <h3>Creating an instance:</h3>
         <code>
         <pre>
   var person1 = Object.create(person);
@@ -301,12 +301,12 @@
        <p>You use the new keyword to call the constructor.</p>
        <p>It has an associated prototype object that can be accessed: <span class="green">funcName.prototype</span></p>
       </div>
-    </div>    
+    </div>
     <!--slide-->
     <div class="slide">
       <h1 class="slide-title">JS Objects</h1>
       <div class="slide-content">
-       <h2 class="green">Constructor</h2>       
+       <h2 class="green">Constructor</h2>
         <code>
         <pre>
   var Person = function(name, gender){
@@ -324,7 +324,7 @@
     <div class="slide">
       <h1 class="slide-title">JS Objects</h1>
       <div class="slide-content">
-       <h2 class="green">Constructor</h2>       
+       <h2 class="green">Constructor</h2>
         <code>
         <pre>
   var person1 = new Person("Paulo", "m");
@@ -338,7 +338,7 @@
     <div class="slide">
       <h1 class="slide-title">JS Objects</h1>
       <div class="slide-content">
-       <h2 class="green">Inheritance with Constructor:</h2>       
+       <h2 class="green">Inheritance with Constructor:</h2>
         <code>
         <pre>
   var Employee = function(name, gender, jobTitle){
@@ -364,7 +364,7 @@
     <div class="slide">
       <h1 class="slide-title">JS Objects</h1>
       <div class="slide-content">
-       <h2 class="green">Factory</h2>       
+       <h2 class="green">Factory</h2>
         <code>
         <pre>
   var PersonFactory = function(name, gender){
@@ -384,7 +384,7 @@
     <div class="slide">
       <h1 class="slide-title">JS Objects</h1>
       <div class="slide-content">
-       <h2 class="green">Factory</h2>       
+       <h2 class="green">Factory</h2>
         <code>
         <pre>
   var person1 = PersonFactory("Paulo","m");
@@ -393,7 +393,7 @@
         </code>
       </div>
     </div>
-    
+
     <!--slide-->
     <div class="slide">
       <h1 class="slide-title">JS Objects</h1>
@@ -405,12 +405,12 @@
        <p  class="pad-left-10">With Composition you decide you types based on what they DO.</p>
       </div>
     </div>
-    
+
     <!--slide-->
     <div class="slide">
       <h1 class="slide-title">JS Objects</h1>
       <div class="slide-content">
-       <h2 class="green">Factory Composition</h2>       
+       <h2 class="green">Factory Composition</h2>
         <code>
         <pre>
   var PersonFactory = function(state, name, gender){
@@ -429,14 +429,14 @@
     <div class="slide">
       <h1 class="slide-title">JS Objects</h1>
       <div class="slide-content">
-       <h2 class="green">Factory Composition</h2>       
+       <h2 class="green">Factory Composition</h2>
         <code>
         <pre>
   var RobotFactory = function(state, model, battery){
     state.model = model;
     state.battery = battery;
     state.move = function(){ this.battery -= 20; };
-    state.isLowOnBattery = function(){ 
+    state.isLowOnBattery = function(){
       return this.battery <= 30;
     };
     return state;
@@ -445,16 +445,16 @@
         </code>
       </div>
     </div>
-    
+
     <!--slide-->
     <div class="slide">
       <h1 class="slide-title">JS Objects</h1>
       <div class="slide-content">
-       <h2 class="green">Factory Composition</h2>       
+       <h2 class="green">Factory Composition</h2>
         <code>
         <pre>
   var batman = PersonFactory( {}, "Bruce Wayne", "m");
-  
+
   var spaceRobot = RobotFactory( {}, "r2d2", 60);
 
   var robocop = PersonFactory( {}, "Alex J. Murphy", "m");
@@ -464,18 +464,18 @@
         </code>
       </div>
     </div>
-    
+
     <!--slide-->
     <div class="slide">
       <h1 class="slide-title">JS Objects</h1>
       <div class="slide-content">
-       <h2 class="green center-text center-v">The End</h2>  
+       <h2 class="green center-text center-v">The End</h2>
       </div>
     </div>
 
 	</main>
   <!-- End primary page content -->
-  
+
 	<!-- importing javascript -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
 	<script type='text/javascript' src='assets/js/bundle.js'></script>
