@@ -74,7 +74,9 @@ p {
   .progress-bar .progress {
     height: 2px;
     background-color: #2F839B;
-    width: 1%; }
+    width: 1%;
+    -webkit-transition: all 0.5s;
+    transition: all 0.5s; }
 
 #mv-right, #mv-left {
   position: fixed;
