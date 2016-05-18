@@ -40,6 +40,18 @@ var main = function () {
       currentSlide = moveSlide(slides, currentSlide, -1);
     }
   });
+  
+  
+  // naviation arrows images:
+  $('.arrow-l').click(function() {
+      currentSlide = moveSlide(slides, currentSlide, -1);    
+    }
+  );
+  $('.arrow-r').click(function() {
+      currentSlide = moveSlide(slides, currentSlide, 1);    
+    }  
+  );
+  
 
 
   // mouse click to advance

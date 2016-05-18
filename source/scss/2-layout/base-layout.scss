@@ -12,6 +12,7 @@ body {
 h1 {
 	font-size: 2rem;
 	text-align: left;
+	padding: 0 40px;
 }
 
 h2 {
@@ -50,4 +51,22 @@ p{
 
 .clear:after {
     clear: both;
+}
+
+.arrows {
+	display: block;
+	position: absolute;
+	top: 16px;	
+	width: 100%;
+	z-index: 100;
+	.arrow-l{
+		display: block;
+		float: left;
+		cursor: pointer;
+	}
+	.arrow-r{
+		display: block;
+		float: right;
+		cursor: pointer;
+	}
 }
