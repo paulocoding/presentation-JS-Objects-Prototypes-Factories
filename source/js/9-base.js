@@ -24,7 +24,7 @@ var main = function () {
   });
   
   
-  // naviation arrows images:
+  // navigation arrows images:
   $('.arrow-l').click(function() {
       currentSlide = moveSlide(slides, currentSlide, -1);    
     }
